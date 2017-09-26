@@ -4,8 +4,15 @@ ctx.fillStyle = "red";
 ctx.fillRect(10, 10, 10, 10);
 
 function pixel(){
+    var a=document.getElementById("ejex").value;
+    var b = document.getElementById("ejey").value;
+    //alert("es es "+a);    
+    if(a=="hola"){
+        alert("es hola");        
+    }
+    
     ctx.fillStyle ="blue";
-    ctx.fillRect(30, 30, 10, 10);
+    ctx.fillRect(a, b, 10, 10);
 }
 
 function copy() {
