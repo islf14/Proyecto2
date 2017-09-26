@@ -1,0 +1,14 @@
+h1 {color: #fff}
+body {
+    background: #333;
+    color: #fff;
+}
+#main {
+    margin-top: 100px;
+    text-align: center;
+}
+#myCanvas {
+    background-color: #fff;
+    //height: 600px;
+    //width: 800px;
+}

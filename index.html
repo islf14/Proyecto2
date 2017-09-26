@@ -2,10 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>   
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="estilo1.css">   
 </head>
-<body>  
-   <canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;"></canvas>
+<body>
+<h1>Dibujo</h1>
+ <form>
+   <label for="x">X</label>
+   <input type="text" name="x">
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <label for="y">Y</label>
+   <input type="text" name="y">
+   <br><br>
+   <!--<input type="submit" name="enviar">-->
+    
+ </form>
+    <button onclick="pixel()">Pixel</button>
+    <button onclick="copy()">Copy</button>
+    <button onclick="agrandar()">Agrandar</button>
+
+   <div id="main">
+      <canvas id="myCanvas" width="350" height="400" style="border:1px solid #d3d3d3;"></canvas>
+   </div>   
    <script src="js1.js"></script>
 </body>
 </html>
