@@ -7,23 +7,31 @@
 </head>
 <body>
 <h1>Dibujo</h1>
- <form>
-   <label for="x">X</label>
-   <input type="text" name="x" id="ejex">
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   <label for="y">Y</label>
-   <input type="text" name="y" id="ejey">
-   <br><br>
-   <!--<input type="submit" name="enviar">-->
-    
- </form>
+<form>
+    <label>Coordenada Inicial: </label><br>
+    <label for="x">X<sub>0</sub>:</label>
+    <input class="dato" type="text" name="x" id="ejex">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="y">Y<sub>0</sub>:</label>
+    <input class="dato" type="text" name="y" id="ejey">
+    <br>
+    <label>Coordenada Final</label><br>
+    <label for="xf">X<sub>f</sub>:</label>
+    <input class="dato" type="text" name="xf" id="ejexf">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="yf">Y<sub>f</sub>:</label>
+    <input class="dato" type="text" name="yf" id="ejeyf"><br>
+    <!--<label for="distancia">Distancia:</label>
+    <input type="text" name="distancia" id="distancia">-->
+    <br><br>
+    <!--<input type="submit" name="enviar">-->
+</form>
     <button onclick="pixel()">Pixel</button>
-    <button onclick="copy()">Copy</button>
-    <button onclick="agrandar()">Agrandar</button>
-
-   <div id="main">
-      <canvas id="myCanvas" width="350" height="400" style="border:1px solid #d3d3d3;"></canvas>
-   </div>   
-   <script src="js1.js"></script>
+    <button onclick="linea()">Línea</button>
+    <button onclick="agrandar()">--</button>
+    <div id="main">
+        <canvas id="myCanvas" width="350" height="400" style="border:1px solid #d3d3d3;"></canvas>
+    </div>   
+    <script src="js1.js"></script>
 </body>
 </html>
