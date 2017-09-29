@@ -1,14 +1,11 @@
 h1 {
-	color: #98e994;
+	color: #1D82F5;
 	transition: top 1s;
 }
 
-h1:hover{
-	top: 50px;
-}
 body {
-    background: #333;
-    color: #fff;
+    background: #292525;
+    color: #cbe7f2;
 }
 .dato{
     width: 50px;
@@ -19,6 +16,4 @@ body {
 }
 #myCanvas {
     background-color: #fff;
-    //height: 600px;
-    //width: 800px;
 }
