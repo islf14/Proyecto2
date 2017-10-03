@@ -1,6 +1,13 @@
+#myCanvas {
+    transform: scaleY(-1);
+}
 h1 {
 	color: #1D82F5;
 	transition: top 1s;
+}
+
+entrada {
+    text-align: center;
 }
 
 body {
