@@ -79,11 +79,21 @@ function linea_md() {
     }
     
     if(x0==xf) {
-        //grafica linea vertical
-        for(i=y0;i<=yf;i++){
-            ctx.fillStyle = "blue";
-            ctx.fillRect(x0, i, 1, 1);
+        if(y0>yf){
+            intercambio();
+            for(i=y0;i<=yf;i++){
+                ctx.fillStyle = "blue";
+                ctx.fillRect(x0, i, 1, 1);
+            }
+        }else{
+            //grafica linea vertical
+            for(i=y0;i<=yf;i++){
+                ctx.fillStyle = "blue";
+                ctx.fillRect(x0, i, 1, 1);
+            }
         }
+        
+        
     }
     
     //hallando  diferenciales y pendiente
