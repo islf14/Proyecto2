@@ -31,17 +31,22 @@ function recibir_datos() {
 	y0 = Math.round(b);
 	xf = Math.round(c);
     yf = Math.round(d);
-    console.log(x0+ " "+y0+" "+xf+" "+yf);
+    console.log("i("+x0+ ";"+y0+") -> f("+xf+";"+yf+")");
 }
 
 function intercambio(){
+    console.log("intercambiando puntos");
     var auxx = x0;
     x0 = xf;
     xf = auxx;
     var auxy = y0;
     y0 = yf;
     yf = auxy;
+    console.log("nuevo i("+x0+";"+y0+") ->f("+xf+";"+yf+")");
+    
 }
+
+//////////////////////////////////////////////////
 
 function pixel() {
     a = document.getElementById("ejex").value;
@@ -51,15 +56,15 @@ function pixel() {
     ctx.fillStyle = "blue";
     ctx.fillRect(a, b, 1, 1);
 }
+////////////////////////////////////////////////////////
 
 function linea_md() {
     recibir_datos();
     //esta intercambiando datos
     if (x0 <= xf) {
-        console.log("corrd in: ("+x0+";"+y0+") coord f: ("+xf+";"+yf+")");
+        console.log("Mantiene puntos");
     }else {
         intercambio();
-        console.log("nuevas corrd in: ("+x0+";"+y0+")  coord f: ("+xf+";"+yf+")");
     }
     var i = 0;
     
@@ -134,12 +139,13 @@ function linea_md() {
     }
     console.log("y:"+y);
 }
+////////////////////////////////////////
 
 function linea_add_sim()  {
     recibir_datos();
     var m = (yf-y0)/(xf-x0);
     console.log("m en add: "+m);
-    if((Math.abs(m)<1)&&(x0>xf) || (Math.abs(m)<1)&&(y0>yf)){
+    if((Math.abs(m)<1)&&(x0>xf) || (Math.abs(m)>1)&&(y0>yf)){
         intercambio();
     }
     ctx.fillStyle = "red";
