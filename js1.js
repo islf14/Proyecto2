@@ -198,7 +198,7 @@ function linea_add_simple()  {
 function linea_add_entero(){
     lineasbasicas();
     if (x0!=xf && y0!=yf && pendiente==0){
-        alert("implementando...")
+        //alert("implementando...")
         var error=0,dx=0,dy=0,n=0,x=0,y=0,cuenta=0;
         dx=xf-x0;
         dy=yf-y0;
@@ -263,6 +263,7 @@ function linea_add_entero(){
                     }
                 }
             }else{
+                //caso 4
                 for(cuenta = 1; cuenta <= (dy-1); cuenta++){
                     if (error<0){
                         x = x - 1;
