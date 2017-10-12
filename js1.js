@@ -31,7 +31,7 @@ function recibir_datos() {
 	y0 = Math.round(b);
 	xf = Math.round(c);
     yf = Math.round(d);
-    console.log("i("+x0+ ";"+y0+") -> f("+xf+";"+yf+")");
+    console.log("Recibiendo : i("+x0+ ";"+y0+") -> f("+xf+";"+yf+")");
 }
 /////////////////////////////////////////////
 function intercambio(){
@@ -42,7 +42,7 @@ function intercambio(){
     var auxy = y0;
     y0 = yf;
     yf = auxy;
-    console.log("nuevo i("+x0+";"+y0+") ->f("+xf+";"+yf+")");
+    console.log("nuevo i("+x0+";"+y0+") -> f("+xf+";"+yf+")");
 }
 //////////////////////////////////////////////////
 
@@ -124,12 +124,12 @@ function lineasbasicas(){
     var dyy = yf-y0;
     var dxx = xf-x0;
     pendiente=0;
-    console.log("dyy: "+dyy+" dxx: "+dxx);
+    console.log("dyy:"+dyy+"; dxx:"+dxx);
     if(dyy==dxx){
         pendiente = 1;
     }
     var auxpend = dxx*(-1);
-    console.log("dxx*-1 = "+auxpend);
+    console.log("dxx*(-1) = "+auxpend);
     if(dyy==auxpend){
         pendiente = -1;
     }
@@ -200,13 +200,15 @@ function linea_add_entero(){
     if (x0!=xf && y0!=yf && pendiente==0){
         //alert("implementando...")
         var error=0,dx=0,dy=0,n=0,x=0,y=0,cuenta=0;
-        dx=xf-x0;
         dy=yf-y0;
+        dx=xf-x0;
+        console.log("add entero-> dy="+dy+"; dx="+dx);
         //verificamos que no se negativo
         if (dy<0) {
             intercambio();
             dy=-dy;
             dx=-dx;
+            console.log("nuevos dy="+dy+"; dx="+dx)
         }
         ctx.fillStyle = "#2AC004";//dibujamos primer punto
         ctx.fillRect(x0, y0, 1, 1);
@@ -216,6 +218,7 @@ function linea_add_entero(){
             //caso 1 o 2
             if (dx>=dy){
                 //caso 1
+                console.log("Caso 1");
                 for (cuenta=1;cuenta<=(dx-1);cuenta++){
                     if (error<0){
                         x = x + 1;
@@ -231,6 +234,7 @@ function linea_add_entero(){
                 }
             }else{
                 //caso 2
+                console.log("Caso 2");
                 for (cuenta=1;cuenta<=(dy-1);cuenta++){
                     if(error<0){
                         x = x + 1;
@@ -247,9 +251,10 @@ function linea_add_entero(){
             }
         }else{
             //caso 3 o 4
-            if (dx>=dy){
+            if (Math.abs(dx)>=Math.abs(dy)){
                 //caso 3
-                for(cuenta=1;cuenta<=(dx-1);cuenta++){
+                console.log("Caso 3");
+                for(cuenta=1;cuenta<=(Math.abs(dx)-1);cuenta++){
                     if(error<0){
                         x = x - 1;
                         ctx.fillRect(x, y, 1, 1);
@@ -264,6 +269,7 @@ function linea_add_entero(){
                 }
             }else{
                 //caso 4
+                console.log("Caso 4");                
                 for(cuenta = 1; cuenta <= (dy-1); cuenta++){
                     if (error<0){
                         x = x - 1;
