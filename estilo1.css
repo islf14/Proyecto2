@@ -2,12 +2,13 @@
     transform: scaleY(-1);
 }
 h1 {
-	color: #1D82F5;
+	color: #53eb27;
 	transition: top 1s;
 }
 
-entrada {
+.form {
     text-align: center;
+    color: #53eb27;
 }
 
 body {
