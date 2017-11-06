@@ -5,10 +5,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Indie Flower', cursive;
+    font-family: 'Oswald', sans-serif;
+}
+
 header {
     width: 100%;
     height: 50px;
     background: #000;
+    color: #fff;
     position: fixed;
     top: 0;
     left: 0;
@@ -19,7 +27,7 @@ header {
     margin: auto;
 }
 header .contenedor{
-    /*display: table;*/
+    display: table;
 }
 
 #myCanvas {
@@ -33,7 +41,7 @@ h1 {
 
 .form {
     margin-top: 50px;
-    color: #53eb27;
+    color: #000;
 }
 
 .dato{
