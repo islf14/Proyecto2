@@ -18,44 +18,52 @@
             </nav>
         </div>
     </header>
-        <div class="contenedor">
-            <form class="form">
-                <div class="lineas">
-                    <h2>LÍNEAS:</h2>
-                    <label class="#">Coordenada Inicial: </label>
-                    <label class="#" for="ejex">X<sub>0</sub>:</label>
-                    <input class="dato" type="number" name="x" id="ejex" placeholder="x0" >
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <label class="entrada" for="ejey">Y<sub>0</sub>:</label>
-                    <input class="dato" type="number" name="y" id="ejey" placeholder="y0">
-                    <br><br>
-                    <label class="subb">Coordenada Final: </label>
-                    <label for="ejexf">X<sub>f</sub>:</label>
-                    <input class="dato" type="number" name="xf" id="ejexf" placeholder="xf">
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <label for="ejeyf">Y<sub>f</sub>:</label>
-                    <input class="dato" type="number" name="yf" id="ejeyf" placeholder="yf"><br><br>
-                    <!--<input type="submit" name="enviar">-->
-                    <!--<button onclick="pixel()">Pixel</button>-->
-                    <button onclick="linea_md()">Línea Método Directo</button>
-                    <button onclick="linea_add_simple()">Línea ADD Simple</button>
-                    <button onclick="linea_add_entero()">Línea ADD Entero</button>
-                </div>
-                
-                <div class="circulos">
-                    <h2>CÍRCULOS</h2>
-                    <label for="">Centro:</label>
-                    <input type="text">
-                </div>
-                
-            </form>
-            
-            <div id="lienzo">
-                <canvas id="myCanvas" width="500" height="500" style="border:1px solid #d3d3d3;"></canvas>
+       
+    <div class="main">
+        <div class="form">
+            <div class="lineas">
+                <h2>LÍNEAS:</h2>
+                <!--&nbsp;-->
+                <label class="" for="ejex">Coordenada Inicial: </label>
+                <label class="" for="ejex">(</label>
+                <input class="dato" type="number" name="x" id="ejex" placeholder="x0" >;
+                <input class="dato" type="number" name="y" id="ejey" placeholder="Y0">
+                <label class="entrada" for="ejey">)</label>
+                <br><br>
+                <label class="" for="ejexf">Coordenada Final: </label>
+                <label for="ejexf">(</label>
+                <input class="dato" type="number" name="xf" id="ejexf" placeholder="xf">;              
+                <input class="dato" type="number" name="yf" id="ejeyf" placeholder="yf">
+                <label for="ejeyf">)</label>
+                <br><br>
+                <!--<input type="submit" name="enviar">-->
+                <!--<button onclick="pixel()">Pixel</button>-->
+                <button onclick="linea_md()">Línea Método Directo</button>
+                <button onclick="linea_add_simple()">Línea ADD Simple</button>
+                <button onclick="linea_add_entero()">Línea ADD Entero</button>
             </div>
-            
+            <div class="circulos">
+                <h2>CÍRCULOS</h2>
+                <label for="centro">Centro:</label>
+                <input type="text" id="centro">
+                <input type="text">
+                
+            </div>
+
         </div>
+        <div id="lienzo">
+            <canvas id="myCanvas" width="500" height="500" style="border:1px solid #d3d3d3;"></canvas>
+        </div>
+    </div> <!--fin de main-->
+    <footer>
+        <div class="contenedor">
+            <p>ISAÍAS LAQUI FLORES</p>
+            <div class="sociales">
+                <p>ESIS</p>
+            </div>
+        </div>
+    </footer>
     
-    <script src="js1.js"></script>
+    <script src="js/js1.js"></script>
 </body>
 </html>

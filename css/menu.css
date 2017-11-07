@@ -34,7 +34,7 @@ header label{
     transform: translate(0%);
 }
 
-@media (min-width:1024px){
+@media (min-width:948px){
     .menu{
         position: static;
         width: auto;
