@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>CADis</title>
     <link rel="stylesheet" type="text/css" href="css/fontello.css">
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">   
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">   
 </head>
 <body>
     <header>
@@ -44,10 +44,14 @@
             </div>
             <div class="circulos">
                 <h2>CÍRCULOS</h2>
-                <label for="centro">Centro:</label>
-                <input type="text" id="centro">
-                <input type="text">
-                
+                <label for="centrox">Centro:</label>
+                <label for="centrox">(</label>
+                <input type="number" class="dato" id="centrox" placeholder="xc">;
+                <input type="number" class="dato" id="centroy" placeholder="yc">
+                <label for="centroy">)</label><br><br>
+                <label for="">Radio:</label>
+                <input type="number" class="radio" placeholder="Radio"><br><br>
+                <button onclick="circulo_implicito()">Círculo Método Implícito</button>
             </div>
 
         </div>

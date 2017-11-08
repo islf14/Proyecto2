@@ -288,8 +288,26 @@ function linea_add_entero(){
         ctx.fillRect(xf, yf, 1, 1);
     }
 }
-/*
-function copy() {
-    var imgData = ctx.getImageData(10, 10, 10, 10);
-    ctx.putImageData(imgData, 20, 70);
-}*/
+
+function circulo_implicito{
+    var xc = document.getElementById("ejex").value;
+    var yc = document.getElementById("ejey").value;
+    var radio = document.getElementById("ejexf").value;
+    if(xc==""){
+        alert("Ingrse xc");
+		return false;
+    }
+    if(yc==""){
+        alert("Ingrse yc");
+		return false;
+    }
+    if(radio==""){
+        alert("Ingrse radio");
+		return false;
+    }
+    
+    xc = Math.round(xc);
+    yc = Math.round(yc);
+    radio = Math.round(radio);
+    console.log("yc: "+xc+" yc: "+yc+" radio: "+radio);
+}

@@ -44,8 +44,12 @@ h1 {
 .dato{
     width: 50px;
 }
+.radio{
+    width: 60px;
+}
 
 .main{
+    margin-top: 60px;
     text-align:center;
     display: flex;
     flex-wrap: wrap;
@@ -55,9 +59,8 @@ h1 {
 }
 .form {
     /*margin: 3px;*/
-    margin-top: 70px;
+    margin: 10px;
     color: #000;
-    background: #b3e2ed;
     width: 400px;
     min-width: 300px;
     /*float: left;*/
@@ -65,18 +68,18 @@ h1 {
     flex-wrap: wrap;
 }
 .lineas, .circulos{
-    margin-bottom:  10px;
+    margin:  10px;
     border: 1px solid #000;
     padding: 10px;
+    background: #b3e2ed;
+
 }
 .lineas h2,.circulos h2 {
     text-align: center;
     margin-bottom: 5px;
 }
 #lienzo {
-    /*margin: 10px;*/
-    margin-top: 60px;
-    margin-left: 10px;
+    margin: 10px;
     /*float: left;*/
     background: #6f2727;
     box-sizing: border-box;
@@ -86,7 +89,6 @@ h1 {
     /*margin: 5px;*/
     background-color: #fff;
     border:  1px solid #000;
-    margin-bottom: 0px;
     /*text-align: center;*/
 }
 footer .contenedor {
@@ -94,8 +96,8 @@ footer .contenedor {
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px;
-    color: #ccc;
-    background: #fff;
+    color: #4c22f8;
+    background: #0f0d2a;
 }
 .sociales {
     width: 100%;
