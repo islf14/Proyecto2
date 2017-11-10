@@ -289,10 +289,10 @@ function linea_add_entero(){
     }
 }
 
-function circulo_implicito{
-    var xc = document.getElementById("ejex").value;
-    var yc = document.getElementById("ejey").value;
-    var radio = document.getElementById("ejexf").value;
+function circulo_implicito(){
+    var xc = document.getElementById("centrox").value;
+    var yc = document.getElementById("centroy").value;
+    var radio = document.getElementById("radio").value;
     if(xc==""){
         alert("Ingrse xc");
 		return false;
