@@ -14,15 +14,16 @@
             <input type="checkbox" id="menu-bar">
             <label class="icon-menu" for="menu-bar"></label>
             <nav class="menu">
-                <a href="">Líneas</a>
-                <a href="">Circulos</a>
+                <a onclick="muestra_oculta('lineas')">Líneas</a>
+                <a onclick="muestra_oculta('circulos')">Circulos</a>
+                <a onclick="muestra_oculta('jj')">more...</a>
             </nav>
         </div>
     </header>
        
     <div class="main">
         <div class="form">
-            <div class="lineas">
+            <div class="lineas" id="lineas">
                 <h2>LÍNEAS:</h2>
                 <!--&nbsp;-->
                 <label class="" for="ejex">Coordenada Inicial: </label>
@@ -43,7 +44,7 @@
                 <button onclick="linea_add_simple()">Línea ADD Simple</button>
                 <button onclick="linea_add_entero()">Línea ADD Entero</button>
             </div>
-            <div class="circulos">
+            <div class="circulos" id="circulos">
                 <h2>CÍRCULOS</h2>
                 <label for="centrox">Centro:</label>
                 <label for="centrox">(</label>
@@ -69,6 +70,7 @@
         </div>
     </footer>
     
+    <script src="js/ocultar.js"></script>
     <script src="js/js1.js"></script>
 </body>
 </html>

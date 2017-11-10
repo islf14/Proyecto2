@@ -25,6 +25,7 @@ header label{
     text-decoration: none;
     padding: 15px;
     border-bottom: 1px solid rgba(255,255,255,0.3);
+    cursor: pointer;
 }
 .menu a:hover{
     background: rgba(255,255,255,0.3);
