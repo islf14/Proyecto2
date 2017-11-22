@@ -355,7 +355,7 @@ function circulo_trazado_incremental(){
     x_ti = 0;
     y_ti = radio;
     while(Math.abs(x_ti)<Math.abs(y_ti)){
-        ctx.fillRect(Math.round(xc+x_ti), Math.round(yc+y_ti), 1, 1);    
+        ctx.fillRect(Math.round(xc+x_ti), Math.round(yc+y_ti), 1, 1);
         ctx.fillRect(Math.round(xc-x_ti), Math.round(yc+y_ti), 1, 1);
         ctx.fillRect(Math.round(xc+x_ti), Math.round(yc-y_ti), 1, 1);
         ctx.fillRect(Math.round(xc-x_ti), Math.round(yc-y_ti), 1, 1);
@@ -371,16 +371,27 @@ function circulo_trazado_incremental(){
 
 function circulo_algoritmo_bresenham(){
     recibir_datos_circulo();
-    var x_tope=0,y=0,da,db,rad,s;
+    var x_tope=0,y=0,da,db,rad,s,y_aux;
     x_tope = Math.round(radio/Math.sqrt(2));
     y=radio;
     rad = Math.pow(radio,2);
-    for (i=1;i<=x_tope;i++){
+    ctx.fillStyle = "orange";    
+    for (i=0;i<=x_tope;i++){
+        //console.log("entra ("+i+";"+y+")");
         da = Math.pow(i,2) + Math.pow(y,2) - rad;
         db = Math.pow(i,2) + Math.pow(y-1,2) - rad;
         s = da + db;
         if(s>0){
-            ///tomar da
+            y = y-1;
         }
+        //console.log("s:" + s + " punto: ("+i+";"+y+")");
+        ctx.fillRect(xc + i, yc + y, 1, 1);
+        ctx.fillRect(xc - i, yc + y, 1, 1);
+        ctx.fillRect(xc + i, yc - y, 1, 1);
+        ctx.fillRect(xc - i, yc - y, 1, 1);
+        ctx.fillRect(xc + y, yc + i, 1, 1);
+        ctx.fillRect(xc - y, yc + i, 1, 1);
+        ctx.fillRect(xc + y, yc - i, 1, 1);
+        ctx.fillRect(xc - y, yc - i, 1, 1);
     }
 }
