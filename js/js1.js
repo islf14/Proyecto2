@@ -5,7 +5,7 @@ var ctx = c.getContext("2d");
 var a = 0, b = 0, c = 0, d = 0, i = 0;
 var x0 = 0, y0 = 0, xf = 0, yf = 0, pendiente = 0;;
 ////////////////////////////////////////////
-function recibir_datos() {
+function recibir_datos_linea() {
     a = document.getElementById("ejex").value;
     b = document.getElementById("ejey").value;
     c = document.getElementById("ejexf").value;
@@ -100,7 +100,7 @@ function linea_diag_perf(){
 }
 /////////////////////////////////////////////////
 function lineasbasicas(){
-    recibir_datos();
+    recibir_datos_linea();
     //esta intercambiando datos
     if (x0 <= xf) {
         console.log("Mantiene puntos por eje x");
@@ -289,25 +289,98 @@ function linea_add_entero(){
     }
 }
 
-function circulo_implicito(){
-    var xc = document.getElementById("centrox").value;
-    var yc = document.getElementById("centroy").value;
-    var radio = document.getElementById("radio").value;
+var xc=0,yc=0,radio=0;
+
+function recibir_datos_circulo(){
+    xc = document.getElementById("centrox").value;
+    yc = document.getElementById("centroy").value;
+    radio = document.getElementById("radio").value;
     if(xc==""){
         alert("Ingrse xc");
 		return false;
     }
     if(yc==""){
         alert("Ingrse yc");
-		return false;
+		return false
     }
     if(radio==""){
         alert("Ingrse radio");
 		return false;
     }
-    
+
     xc = Math.round(xc);
     yc = Math.round(yc);
     radio = Math.round(radio);
-    console.log("yc: "+xc+" yc: "+yc+" radio: "+radio);
+    console.log("xc: "+xc+" yc: "+yc+" radio: "+radio);
+}
+
+function circulo_implicito(){
+    recibir_datos_circulo();
+    ctx.fillStyle = "red";
+    var ymas=0,ymenos=0;
+    for(i = (xc-radio);i <= xc + radio;i++){
+        ymas = Math.round(yc + Math.sqrt(Math.pow(radio,2)-Math.pow((i-xc),2)));
+        ymenos = Math.round(yc - Math.sqrt(Math.pow(radio,2)-Math.pow((i-xc),2)));
+        console.log("dibujando ("+i+";"+ymas+")");        
+        ctx.fillRect(i, ymas, 1, 1);
+        ctx.fillRect(i, ymenos, 1, 1);
+    }
+}
+
+function circulo_param_polar(){
+    recibir_datos_circulo();
+    var x_mp=0,y_mp=0;
+    var pi=3.14159265358979;
+    var sum_dalfa=0,alfa=pi/64;
+    sum_dalfa=alfa;
+    console.log("pi: "+pi);
+    ctx.fillStyle = "blue";
+    while(sum_dalfa<=2*pi){
+        x_mp = xc + Math.round(radio* Math.cos(sum_dalfa));
+        y_mp = yc + Math.round(radio* Math.sin(sum_dalfa));
+        console.log("dibujando ("+x_mp+";"+y_mp+")");                
+        ctx.fillRect(x_mp, y_mp, 1, 1);
+        sum_dalfa = sum_dalfa + alfa;
+    }
+}
+
+function circulo_trazado_incremental(){
+    recibir_datos_circulo();
+    var x_ti=0,y_ti=0, x_aux=0;
+    var sum_dalfa=0,alfa=1/radio;
+    var seno=Math.sin(alfa);
+    var coseno = Math.cos(alfa);
+    //console.log("seno: "+seno+" coseno: "+coseno)
+    ctx.fillStyle = "green";
+    x_ti = 0;
+    y_ti = radio;
+    while(Math.abs(x_ti)<Math.abs(y_ti)){
+        ctx.fillRect(Math.round(xc+x_ti), Math.round(yc+y_ti), 1, 1);    
+        ctx.fillRect(Math.round(xc-x_ti), Math.round(yc+y_ti), 1, 1);
+        ctx.fillRect(Math.round(xc+x_ti), Math.round(yc-y_ti), 1, 1);
+        ctx.fillRect(Math.round(xc-x_ti), Math.round(yc-y_ti), 1, 1);
+        ctx.fillRect(Math.round(xc+y_ti), Math.round(yc+x_ti), 1, 1);
+        ctx.fillRect(Math.round(xc-y_ti), Math.round(yc+x_ti), 1, 1);
+        ctx.fillRect(Math.round(xc+y_ti), Math.round(yc-x_ti), 1, 1);
+        ctx.fillRect(Math.round(xc-y_ti), Math.round(yc-x_ti), 1, 1);
+        x_aux = x_ti
+        x_ti = x_ti*coseno - y_ti*seno;
+        y_ti = y_ti*coseno + x_aux*seno;
+    }
+}
+
+function circulo_algoritmo_bresenham(){
+    recibir_datos_circulo();
+    var x_tope=0,y=0,da,db,rad,s;
+    x_tope = Math.round(radio/Math.sqrt(2));
+    y=radio;
+    rad = Math.pow(radio,2);
+    for (i=1;i<=x_tope;i++){
+        da = Math.pow(i,2) + Math.pow(y,2) - rad;
+        db = Math.pow(i,2) + Math.pow(y-1,2) - rad;
+        s = da + db;
+        if(s>0){
+            ///tomar da
+        }
+    }
 }
