@@ -11,5 +11,5 @@ function muestra_oculta(id){
     }*/
 
 function activa(){
-    document.getElementById("menu-bar").checked = false;
+    document.getElementById("menu-bar").checked = false;//sirve para ocultar el menú cuando se desplieg
 }
