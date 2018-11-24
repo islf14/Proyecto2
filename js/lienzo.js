@@ -1,4 +1,4 @@
-var x=0,y=0,valorx=null,valory=null;
+var x=0,y=0,valorx=null,valory=null;//declarando variables nulas
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 var a;
@@ -8,11 +8,11 @@ var cont_puntos=0;
 var campo1,campo2,indicador=false;
 function en_lienzo(){
     event = event || window.event;
-    x = event.pageX - c.offsetLeft,
-    y = event.pageY - c.offsetTop;
-    y = c.height-y;
+    x = event.pageX - c.offsetLeft,//event.pageX es la distancia izquierda de la ventana donde se dio clic//c.offsetLeft es la distancia hasta el lienzo
+    y = event.pageY - c.offsetTop;//event.pageY es la dist superior de la ventana//c.offsetTop es la distancia desde arriba//tenemos dis en y pero de arriba
+    y = c.height-y;//c.height es altura de canvas//consegimos la distancia desde abajo hacia arriba
     a = document.getElementById('ejex');
-    var pHoras = document.getElementById('horas')
+    //var pHoras = document.getElementById('horas')
     console.log("x: "+x);
     console.log("y: "+y);    
 }
